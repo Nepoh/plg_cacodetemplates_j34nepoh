@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- @version			$Id: j34standard.xml 508 2015-04-11 10:20:08Z BrianWade $ -->
-<!-- @name              Joomla! 3.4 Standard Code Template (Release 1.0.0) -->
-<!-- @author		    Component Architect (www.componentarchitect.com) -->
+<!-- @name              Joomla! 3.4 Nepoh Code Template (Release 1.0.0) -->
+<!-- @author		    Nepoh -->
 <!-- @package		    componentarchitect -->
-<!-- @subpackage	    componentarchitect.cacodetemplates.j34standard -->
+<!-- @subpackage	    componentarchitect.cacodetemplates.j34nepoh -->
 <!-- @copyright		    Copyright (c)2013 - 2015 Simply Open Source Ltd. (trading as Component Architect). All Rights Reserved -->
 <!-- @license		    GNU General Public License version 3 or later; See http://www.gnu.org/copyleft/gpl.html -->
 
@@ -14,29 +14,25 @@
 <!-- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details. -->
 
 <extension version="2.5" type="plugin" group="cacodetemplates" method="upgrade">
-    <name>plg_cacodetemplates_j34standard</name>
-    <author>Component Architect</author>
-    <creationDate>April 2015</creationDate>
-    <copyright>
-        Copyright (c)2013 - 2015 Simply Open Source Ltd. (trading as Component Architect). All Rights Reserved
-    </copyright>
-    <license>
-        GNU General Public License version 3 or later; See http://www.gnu.org/copyleft/gpl.html
-    </license>
-    <authorEmail>development@componentarchitect.com</authorEmail>
-    <authorUrl>http://www.componentarchitect.com</authorUrl>
+    <name>plg_cacodetemplates_j34nepoh</name>
+    <author>Nepoh</author>
+    <creationDate>10/2015</creationDate>
+    <copyright>Copyright (c)2013 - 2015 Simply Open Source Ltd. (trading as Component Architect). All Rights Reserved</copyright>
+    <license>GNU General Public License version 3 or later; See http://www.gnu.org/copyleft/gpl.html</license>
+    <authorEmail>nepoh@outlook.de</authorEmail>
+    <authorUrl>https://www.github.com/nepoh</authorUrl>
     <version>1.0.0</version>
-    <description>PLG_CACODETEMPLATES_J34STANDARD_XML_DESCRIPTION</description>
+    <description>PLG_CACODETEMPLATES_J34NEPOH_XML_DESCRIPTION</description>
+	
 	<files>
-		<file plugin="j34standard">j34standard.php</file>
-        <filename>com_architectcomp_j34standard.zip</filename>
-
+		<file plugin="j34nepoh">j34nepoh.php</file>
+        <filename>com_architectcomp_j34nepoh.zip</filename>
     </files>
     <languages>
-        <language tag="en-GB">language/en-GB/en-GB.plg_cacodetemplates_j34standard.ini</language>
-        <language tag="en-GB">language/en-GB/en-GB.plg_cacodetemplates_j34standard.sys.ini</language>
+        <language tag="en-GB">language/en-GB/en-GB.plg_cacodetemplates_j34nepoh.ini</language>
+        <language tag="en-GB">language/en-GB/en-GB.plg_cacodetemplates_j34nepoh.sys.ini</language>
     </languages>
-    <scriptfile>j34standard_install.php</scriptfile>
+    <scriptfile>j34nepoh_install.php</scriptfile>
 
     <config>
         <fields
@@ -48,8 +44,8 @@
                 <field
                     name="codetemplate_record_id"
                     type="text"
-					label="PLG_CACODETEMPLATES_J34STANDARD_RECORD_LABEL"
-					description="PLG_CACODETEMPLATES_J34STANDARD_RECORD_DESC"
+					label="PLG_CACODETEMPLATES_J34NEPOH_RECORD_LABEL"
+					description="PLG_CACODETEMPLATES_J34NEPOH_RECORD_DESC"
 					class="inputbox"
 					default=""
 					disabled="true"
@@ -58,10 +54,10 @@
                 <field
                     name="codetemplate_folder_path"
                     type="text"
-					label="PLG_CACODETEMPLATES_J34STANDARD_FOLDER_LABEL"
-					description="PLG_CACODETEMPLATES_J34STANDARD_FOLDER_DESC"
+					label="PLG_CACODETEMPLATES_J34NEPOH_FOLDER_LABEL"
+					description="PLG_CACODETEMPLATES_J34NEPOH_FOLDER_DESC"
 					class="inputbox"
-					default="j34standard"
+					default="j34nepoh"
 					disabled="true"
 					size="100"
 				/>

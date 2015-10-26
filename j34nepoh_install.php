@@ -1,10 +1,10 @@
 <?php
 /**
  * @version			$Id: j34standard_install.php 457 2015-03-23 18:42:38Z BrianWade $
- * @name			Joomla! 3.4 Standard Code Template (Release 1.0.0)
- * @author			Component Architect (www.componentarchitect.com)
+ * @name			Joomla! 3.4 Nepoh Code Template (Release 1.0.0)
+ * @author			Nepoh
  * @package			componentarchitect
- * @subpackage		componentarchitect.cacodetemplates.j34standard
+ * @subpackage		componentarchitect.cacodetemplates.j34nepoh
  * @copyright		Copyright (c)2013 - 2015 Simply Open Source Ltd. (trading as Component Architect). All Rights Reserved
  * @license			GNU General Public License version 3 or later; See http://www.gnu.org/copyleft/gpl.html
  * 
@@ -19,10 +19,11 @@ defined('JPATH_BASE') or die;
 
 jimport('joomla.filesystem.folder');
 jimport('joomla.filesystem.file');
+
 /**
  * Script file of Component Architect code templates J34 Standard plugin
  */
-class plgCACodeTemplatesj34standardInstallerScript
+class plgCACodeTemplatesj34nepohInstallerScript
 {
     /**
      * method to install the code template
@@ -59,16 +60,16 @@ class plgCACodeTemplatesj34standardInstallerScript
 		
 		$query->clear();
 		$query->insert($db->quoteName('#__componentarchitect_codetemplates'));
-		$query->set($db->quoteName('name').' = '.$db->quote('J 3.4 Standard'));
+		$query->set($db->quoteName('name').' = '.$db->quote('J 3.4 Nepoh'));
 		$query->set($db->quoteName('catid').' = '.(int) $category_id);
-		$query->set($db->quoteName('description').' = '.$db->quote(JText::_('PLG_CACODETEMPLATES_J34STANDARD_CODETEMPLATE_DESCRIPTION')));
+		$query->set($db->quoteName('description').' = '.$db->quote(JText::_('PLG_CACODETEMPLATES_J34NEPOH_CODETEMPLATE_DESCRIPTION')));
 		$query->set($db->quoteName('template_component_name').' = '.$db->quote('architect comp'));
 		$query->set($db->quoteName('template_object_name').' = '.$db->quote('comp object'));
 		$query->set($db->quoteName('template_markup_prefix').' = '.$db->quote('[%%'));
 		$query->set($db->quoteName('template_markup_suffix').' = '.$db->quote('%%]'));
 		$query->set($db->quoteName('version').' = '.$db->quote($release));
-		$query->set($db->quoteName('source_path').' = '.$db->quote('j_3_4_standard'));
-		$query->set($db->quoteName('predefined_code_template').' = 1');
+		$query->set($db->quoteName('source_path').' = '.$db->quote('j_3_4_nepoh'));
+		$query->set($db->quoteName('predefined_code_template').' = 0');
 		$query->set($db->quoteName('generate_predefined_fields').' = 0');
 		$query->set($db->quoteName('multiple_category_objects').' = 0');
 		$query->set($db->quoteName('platform').' = '.$db->quote('Joomla'));
@@ -86,13 +87,13 @@ class plgCACodeTemplatesj34standardInstallerScript
 		}			
 		catch (RuntimeException $e)
 		{
-			JFactory::getApplication()->enqueueMessage(JText::sprintf('PLG_CACODETEMPLATES_J34STANDARD_ERROR_CODETEMPLATE_INSERT', $e->getMessage()), 'warning');
+			JFactory::getApplication()->enqueueMessage(JText::sprintf('PLG_CACODETEMPLATES_J34NEPOH_ERROR_CODETEMPLATE_INSERT', $e->getMessage()), 'warning');
 			return false;
 		}
 		
           
         // Store the record id and folder location for this code template plugin 
-        $param_array = array('codetemplate_record_id' => $db->insertid(), 'codetemplate_folder_path' => 'administrator/components/com_componentarchitect/codetemplates/j_3_4_standard');   
+        $param_array = array('codetemplate_record_id' => $db->insertid(), 'codetemplate_folder_path' => 'administrator/components/com_componentarchitect/codetemplates/j_3_4_nepoh');   
 		$this->setParams($param_array);
 		        
 		return true;
@@ -125,17 +126,17 @@ class plgCACodeTemplatesj34standardInstallerScript
 		}
 		catch (RuntimeException $e)
 		{
-			JFactory::getApplication()->enqueueMessage(JText::sprintf('PLG_CACODETEMPLATES_J34STANDARD_ERROR_CODETEMPLATE_DELETE', $e->getMessage()), 'warning');
+			JFactory::getApplication()->enqueueMessage(JText::sprintf('PLG_CACODETEMPLATES_J34NEPOH_ERROR_CODETEMPLATE_DELETE', $e->getMessage()), 'warning');
 			$return = false;
 		}		
 		
 		try
 		{
-			JFolder::delete(JPATH_SITE.'/administrator/components/com_componentarchitect/codetemplates/j_3_4_standard');
+			JFolder::delete(JPATH_SITE.'/administrator/components/com_componentarchitect/codetemplates/j_3_4_nepoh');
 		}
 		catch (RuntimeException $e)
 		{
-			JFactory::getApplication()->enqueueMessage(JText::_('PLG_CACODETEMPLATES_J34STANDARD_ERROR_CODETEMPLATE_FILE_DELETE'), 'warning');
+			JFactory::getApplication()->enqueueMessage(JText::_('PLG_CACODETEMPLATES_J34NEPOH_ERROR_CODETEMPLATE_FILE_DELETE'), 'warning');
 			$return = false;
 		}	
 		
@@ -174,7 +175,7 @@ class plgCACodeTemplatesj34standardInstallerScript
 		}			
 		catch (RuntimeException $e)
 		{
-			JFactory::getApplication()->enqueueMessage(JText::sprintf('PLG_CACODETEMPLATES_J34STANDARD_ERROR_CODETEMPLATE_UPDATE', $e->getMessage()), 'warning');
+			JFactory::getApplication()->enqueueMessage(JText::sprintf('PLG_CACODETEMPLATES_J34NEPOH_ERROR_CODETEMPLATE_UPDATE', $e->getMessage()), 'warning');
 			return false;
 		}
 		
@@ -217,38 +218,38 @@ class plgCACodeTemplatesj34standardInstallerScript
 		switch ($type)
 		{
 			case 'install' :
-				if (!JFolder::exists(JPATH_SITE.'/administrator/components/com_componentarchitect/codetemplates/j_3_4_standard'))
+				if (!JFolder::exists(JPATH_SITE.'/administrator/components/com_componentarchitect/codetemplates/j_3_4_nepoh'))
 				{
 					// Now need to copy the code template files to the com_componentarchitect/codetemplates folder
-					$result = JFolder::create(JPATH_SITE.'/administrator/components/com_componentarchitect/codetemplates/j_3_4_standard');
+					$result = JFolder::create(JPATH_SITE.'/administrator/components/com_componentarchitect/codetemplates/j_3_4_nepoh');
 					if ($result !== true) 
 					{
-						JFactory::getApplication()->enqueueMessage(JText::_('PLG_CACODETEMPLATES_J34STANDARD_ERROR_CODETEMPLATE_FILE_COPY').' - '.$result, 'warning');
+						JFactory::getApplication()->enqueueMessage(JText::_('PLG_CACODETEMPLATES_J34NEPOH_ERROR_CODETEMPLATE_FILE_COPY').' - '.$result, 'warning');
 						return false;
 					}
 				}
 				
 				$zip_adapter = JArchive::getAdapter('zip');
-				$result = $zip_adapter->extract(JPATH_SITE.'/plugins/cacodetemplates/j34standard/com_architectcomp_j34standard.zip', JPATH_SITE.'\administrator\components\com_componentarchitect\codetemplates\j_3_4_standard\com_architectcomp_j34standard');
+				$result = $zip_adapter->extract(JPATH_SITE.'/plugins/cacodetemplates/j34nepoh/com_architectcomp_j34nepoh.zip', JPATH_SITE.'\administrator\components\com_componentarchitect\codetemplates\j_3_4_nepoh\com_architectcomp_j34nepoh');
 
 				if ($result !== true) 
 				{
-					JFactory::getApplication()->enqueueMessage(JText::_('PLG_CACODETEMPLATES_J34STANDARD_ERROR_CODETEMPLATE_FILE_COPY').' - '.$result, 'warning');
+					JFactory::getApplication()->enqueueMessage(JText::_('PLG_CACODETEMPLATES_J34NEPOH_ERROR_CODETEMPLATE_FILE_COPY').' - '.$result, 'warning');
 					return false;
 				}			          
 		 
-				break;    				
+				break;    	
 			case 'update' :
 				// Now need to copy the code template files to overwrite those in the com_componentarchitect/codetemplates folder
 				$zip_adapter = JArchive::getAdapter('zip');
-				$result = $zip_adapter->extract(JPATH_SITE.'/plugins/cacodetemplates/j34standard/com_architectcomp_j34standard.zip', JPATH_SITE.'/administrator/components/com_componentarchitect/codetemplates/j_3_4_standard/com_architectcomp_j34standard');
+				$result = $zip_adapter->extract(JPATH_SITE.'/plugins/cacodetemplates/j34nepoh/com_architectcomp_j34nepoh.zip', JPATH_SITE.'/administrator/components/com_componentarchitect/codetemplates/j_3_4_nepoh/com_architectcomp_j34nepoh');
 				if ($result !== true) 
 				{
-					JFactory::getApplication()->enqueueMessage(JText::_('PLG_CACODETEMPLATES_J34STANDARD_ERROR_CODETEMPLATE_FILE_COPY').' - '.$result, 'warning');
+					JFactory::getApplication()->enqueueMessage(JText::_('PLG_CACODETEMPLATES_J34NEPOH_ERROR_CODETEMPLATE_FILE_COPY').' - '.$result, 'warning');
 					return false;
 				}
 				
-				break; 					
+				break; 
 			default :
 				break; 
 		}				
@@ -266,7 +267,7 @@ class plgCACodeTemplatesj34standardInstallerScript
 		// Construct the query
 		$query->select($db->quoteName('manifest_cache'));
 		$query->from($db->quoteName('#__extensions'));	
-		$query->where($db->quoteName('name').' = '.$db->quote('plg_cacodetemplates_j34standard'));		
+		$query->where($db->quoteName('name').' = '.$db->quote('plg_cacodetemplates_j34nepoh'));		
 		$query->where($db->quoteName('type').' = '.$db->quote('plugin'));
 
 		$db->setQuery($query->__toString());
@@ -287,7 +288,7 @@ class plgCACodeTemplatesj34standardInstallerScript
 		// Construct the query
 		$query->select($db->quoteName('params'));
 		$query->from($db->quoteName('#__extensions'));	
-		$query->where($db->quoteName('name').' = '.$db->quote('plg_cacodetemplates_j34standard'));		
+		$query->where($db->quoteName('name').' = '.$db->quote('plg_cacodetemplates_j34nepoh'));		
 		$query->where($db->quoteName('type').' = '.$db->quote('plugin'));
 
 		$db->setQuery($query->__toString());
@@ -318,7 +319,7 @@ class plgCACodeTemplatesj34standardInstallerScript
 			$query = $db->getQuery(true);
 			$query->update($db->quoteName('#__extensions'));
 			$query->set($db->quoteName('params').' = '.$db->quote( $params_string ));
-			$query->where($db->quoteName('name').' = '.$db->quote('plg_cacodetemplates_j34standard'));
+			$query->where($db->quoteName('name').' = '.$db->quote('plg_cacodetemplates_j34nepoh'));
 			$query->where($db->quoteName('type').' = '.$db->quote('plugin'));
 			$db->setQuery($query->__toString());
 			
