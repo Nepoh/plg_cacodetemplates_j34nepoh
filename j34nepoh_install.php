@@ -229,8 +229,14 @@ class plgCACodeTemplatesj34nepohInstallerScript
 					}
 				}
 				
-				$zip_adapter = JArchive::getAdapter('zip');
-				$result = $zip_adapter->extract(JPATH_SITE.'/plugins/cacodetemplates/j34nepoh/com_architectcomp_j34nepoh.zip', JPATH_SITE.'\administrator\components\com_componentarchitect\codetemplates\j_3_4_nepoh\com_architectcomp_j34nepoh');
+				//$zip_adapter = JArchive::getAdapter('zip');
+				//$result = $zip_adapter->extract(
+				//			JPATH_SITE.'/plugins/cacodetemplates/j34nepoh/com_architectcomp_j34nepoh.zip',
+				//			JPATH_SITE.'\administrator\components\com_componentarchitect\codetemplates\j_3_4_nepoh\com_architectcomp_j34nepoh');
+							
+				$result = JFolder->move(
+							JPATH_SITE.'/plugins/cacodetemplates/j34nepoh/com_architectcomp_j34nepoh',
+							JPATH_SITE.'\administrator\components\com_componentarchitect\codetemplates\j_3_4_nepoh');
 
 				if ($result !== true) 
 				{
@@ -238,18 +244,27 @@ class plgCACodeTemplatesj34nepohInstallerScript
 					return false;
 				}			          
 		 
-				break;    	
+				break;
+				
 			case 'update' :
 				// Now need to copy the code template files to overwrite those in the com_componentarchitect/codetemplates folder
-				$zip_adapter = JArchive::getAdapter('zip');
-				$result = $zip_adapter->extract(JPATH_SITE.'/plugins/cacodetemplates/j34nepoh/com_architectcomp_j34nepoh.zip', JPATH_SITE.'/administrator/components/com_componentarchitect/codetemplates/j_3_4_nepoh/com_architectcomp_j34nepoh');
+				//$zip_adapter = JArchive::getAdapter('zip');
+				//$result = $zip_adapter->extract(
+				//			JPATH_SITE.'/plugins/cacodetemplates/j34nepoh/com_architectcomp_j34nepoh.zip',
+				//			JPATH_SITE.'/administrator/components/com_componentarchitect/codetemplates/j_3_4_nepoh/com_architectcomp_j34nepoh');
+							
+				$result = JFolder->move(
+							JPATH_SITE.'/plugins/cacodetemplates/j34nepoh/com_architectcomp_j34nepoh.zip',
+							JPATH_SITE.'/administrator/components/com_componentarchitect/codetemplates/j_3_4_nepoh');
+				
 				if ($result !== true) 
 				{
 					JFactory::getApplication()->enqueueMessage(JText::_('PLG_CACODETEMPLATES_J34NEPOH_ERROR_CODETEMPLATE_FILE_COPY').' - '.$result, 'warning');
 					return false;
 				}
 				
-				break; 
+				break;
+				
 			default :
 				break; 
 		}				
