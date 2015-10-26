@@ -88,25 +88,26 @@
             [%%IF INCLUDE_INTRO%%]
 		    id="introdescription"
 		    name="introdescription"
+			type="editor"
+			buttons="true"
+				[%%IF GENERATE_PLUGINS%%]
+					[%%IF GENERATE_PLUGINS_PAGEBREAK%%]
+			hide="article"
+					[%%ELSE GENERATE_PLUGINS_PAGEBREAK%%]
+			hide="article"
+					[%%ENDIF GENERATE_PLUGINS_PAGEBREAK%%]
+				[%%ELSE GENERATE_PLUGINS%%]            
+			hide="article,pagebreak"                
+				[%%ENDIF GENERATE_PLUGINS%%]
             [%%ELSE INCLUDE_INTRO%%]
 		    id="description"
 		    name="description"
+			type="textarea"
             [%%ENDIF INCLUDE_INTRO%%]
-			type="editor"
 			label="JGLOBAL_DESCRIPTION"
 			description="[%%COM_ARCHITECTCOMP%%]_[%%COMPOBJECTPLURAL%%]_FIELD_DESCRIPTION_DESC"
 			class="inputbox"
             filter="JComponentHelper::filterText"
-			buttons="true"
-            [%%IF GENERATE_PLUGINS%%]
-                [%%IF GENERATE_PLUGINS_PAGEBREAK%%]
-            hide="article"
-                [%%ELSE GENERATE_PLUGINS_PAGEBREAK%%]
-            hide="article"
-                [%%ENDIF GENERATE_PLUGINS_PAGEBREAK%%]
-            [%%ELSE GENERATE_PLUGINS%%]            
-            hide="article,pagebreak"                
-            [%%ENDIF GENERATE_PLUGINS%%] 
 		/>
         [%%ENDIF INCLUDE_DESCRIPTION%%]
         [%%IF INCLUDE_INTRO%%]
