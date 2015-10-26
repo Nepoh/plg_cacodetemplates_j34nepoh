@@ -113,6 +113,8 @@ class [%%ArchitectComp%%]View[%%CompObject%%] extends JViewLegacy
 		$is_new		= ($this->item->id == 0);
 		[%%IF INCLUDE_CHECKOUT%%]
 		$checkedOut	= !($this->item->checked_out == 0 OR $this->item->checked_out == $user_id);
+		[%%ELSE INCLUDE_CHECKOUT%%]
+		$checkedOut = false;
 		[%%ENDIF INCLUDE_CHECKOUT%%]
 
 		JToolbarHelper::title(
