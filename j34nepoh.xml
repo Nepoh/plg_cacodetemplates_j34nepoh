@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- @version			$Id: j34standard.xml 508 2015-04-11 10:20:08Z BrianWade $ -->
+<!-- @name              Joomla! 3.4 Nepoh Code Template (Release 1.0.0) -->
+<!-- @author		    Nepoh -->
+<!-- @package		    componentarchitect -->
+<!-- @subpackage	    componentarchitect.cacodetemplates.j34nepoh -->
+<!-- @copyright		    Copyright (c)2013 - 2015 Simply Open Source Ltd. (trading as Component Architect). All Rights Reserved -->
+<!-- @license		    GNU General Public License version 3 or later; See http://www.gnu.org/copyleft/gpl.html -->
+
+<!-- This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by -->
+<!-- the Free Software Foundation, either version 3 of the License, or (at your option) any later version. -->
+
+<!-- This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of -->
+<!-- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details. -->
+
+<extension version="2.5" type="plugin" group="cacodetemplates" method="upgrade">
+    <name>plg_cacodetemplates_j34nepoh</name>
+    <author>Nepoh</author>
+    <creationDate>10/2015</creationDate>
+    <copyright>Copyright (c)2013 - 2015 Simply Open Source Ltd. (trading as Component Architect). All Rights Reserved</copyright>
+    <license>GNU General Public License version 3 or later; See http://www.gnu.org/copyleft/gpl.html</license>
+    <authorEmail>nepoh@outlook.de</authorEmail>
+    <authorUrl>https://www.github.com/nepoh</authorUrl>
+    <version>1.0.0</version>
+    <description>PLG_CACODETEMPLATES_J34NEPOH_XML_DESCRIPTION</description>
+	
+	<files>
+		<file plugin="j34nepoh">j34nepoh.php</file>
+        <filename>com_architectcomp_j34nepoh.zip</filename>
+    </files>
+    <languages>
+        <language tag="en-GB">language/en-GB/en-GB.plg_cacodetemplates_j34nepoh.ini</language>
+        <language tag="en-GB">language/en-GB/en-GB.plg_cacodetemplates_j34nepoh.sys.ini</language>
+    </languages>
+    <scriptfile>j34nepoh_install.php</scriptfile>
+
+    <config>
+        <fields
+		    name="params"
+		>
+            <fieldset
+                name="basic"
+            >
+                <field
+                    name="codetemplate_record_id"
+                    type="text"
+					label="PLG_CACODETEMPLATES_J34NEPOH_RECORD_LABEL"
+					description="PLG_CACODETEMPLATES_J34NEPOH_RECORD_DESC"
+					class="inputbox"
+					default=""
+					disabled="true"
+					size="10"
+				/>
+                <field
+                    name="codetemplate_folder_path"
+                    type="text"
+					label="PLG_CACODETEMPLATES_J34NEPOH_FOLDER_LABEL"
+					description="PLG_CACODETEMPLATES_J34NEPOH_FOLDER_DESC"
+					class="inputbox"
+					default="j34nepoh"
+					disabled="true"
+					size="100"
+				/>
+             </fieldset>
+        </fields>
+    </config>             
+</extension>
