@@ -21,7 +21,7 @@ jimport('joomla.filesystem.folder');
 jimport('joomla.filesystem.file');
 
 /**
- * Script file of Component Architect code templates J34 Standard plugin
+ * Script file of Component Architect code templates J34 Nepoh plugin
  */
 class plgCACodeTemplatesj34nepohInstallerScript
 {
